@@ -1,4 +1,4 @@
-本项目改自[stanleylsx](https://github.com/stanleylsx)大佬的[entity_extractor_by_ner](https://github.com/stanleylsx/entity_extractor_by_ner.git)项目
+本项目改自[stanleylsx](https://github.com/stanleylsx)大佬的[entity_extractor_by_ner](https://github.com/stanleylsx/entity_extractor_by_ner.git)项目,此库仅供学习使用
 
 欢迎访问我的博客获取帮助：[麻花与千层饼](https://042333.xyz/myproject/256.html)
 

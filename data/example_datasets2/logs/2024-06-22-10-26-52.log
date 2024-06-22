@@ -1,0 +1,50 @@
+2024-06-22 10:26:52
+++++++++++++++++++++++++++++++++++++++++CONFIGURATION SUMMARY++++++++++++++++++++++++++++++++++++++++
+ Status:
+     mode                 : train
+ ++++++++++++++++++++++++++++++++++++++++
+ Datasets:
+     datasets         fold: data/example_datasets2
+     train            file: train.csv
+     validation       file: dev.csv
+     vocab             dir: data/example_datasets2/vocabs
+     delimiter            : b
+     use  pretrained model: True
+     pretrained      model: Bert
+     huggingface       tag: bert-base-chinese
+     finetune             : True
+     use    middle   model: True
+     middle          model: bilstm
+     checkpoints       dir: checkpoints/bert-bilstm-crf2
+     log               dir: data/example_datasets2/logs
+ ++++++++++++++++++++++++++++++++++++++++
+Labeling Scheme:
+     label          scheme: BIO
+     label           level: 2
+     suffixes             : ['ORG', 'PER', 'LOC']
+     measuring     metrics: ['precision', 'recall', 'f1', 'accuracy']
+ ++++++++++++++++++++++++++++++++++++++++
+Model Configuration:
+     embedding         dim: 300
+     max  sequence  length: 300
+     hidden            dim: 200
+     filter           nums: 64
+     idcnn            nums: 2
+     CUDA  VISIBLE  DEVICE: 0
+     seed                 : 5
+ ++++++++++++++++++++++++++++++++++++++++
+ Training Settings:
+     epoch                : 1
+     batch            size: 1
+     dropout              : 0.5
+     learning         rate: 5e-05
+     optimizer            : Adam
+     use               gan: False
+     gan            method: fgm
+     checkpoint       name: model
+     max       checkpoints: 3
+     print       per_batch: 20
+     is     early     stop: True
+     patient              : 5
+++++++++++++++++++++++++++++++++++++++++CONFIGURATION SUMMARY END++++++++++++++++++++++++++++++++++++++++
+label vocab files not exist, building label vocab...没有找到词表，正在生成词表

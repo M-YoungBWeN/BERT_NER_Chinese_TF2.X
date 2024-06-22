@@ -71,7 +71,7 @@ class DataManager:
         :return:
         """
         if not os.path.exists(self.token2id_file):
-            self.logger.info('label vocab files not exist, building label vocab...')
+            self.logger.info('label vocab files not exist, building label vocab...没有找到词表，正在生成词表')
             return self.build_vocab(self.train_file)
 
         self.logger.info('loading vocab...')
@@ -102,10 +102,10 @@ class DataManager:
         """
         df_train = read_csv(train_path, names=['token', 'label'], delimiter=self.configs.delimiter)
         token2id, id2token = {}, {}
-        if not self.configs.use_pretrained_model:
+        if self.configs.use_pretrained_model:
             tokens = list(set(df_train['token'][df_train['token'].notnull()]))
             # 过滤掉为空的token不纳入词表
-            tokens = [tokens for token in tokens if token if token not in [' ', '']]
+            tokens = [token for token in tokens if token.strip() != '']
             token2id = dict(zip(tokens, range(1, len(tokens) + 1)))
             id2token = dict(zip(range(1, len(tokens) + 1), tokens))
             id2token[0] = self.PADDING
